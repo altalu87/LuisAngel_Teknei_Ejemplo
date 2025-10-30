@@ -334,32 +334,31 @@ class SparkDataLoader:
             logger.info("SparkSession detenida correctamente")
 
 
-# ==============================================================================
-# EJEMPLO DE USO
-# ==============================================================================
-if __name__ == "__main__":
+# # ==============================================================================
+# # EJEMPLO DE USO
+# # ==============================================================================
     
-    # 1. Crear el loader
-    loader = SparkDataLoader(
-        app_name="EsquemaEstrellaLoader",
-        driver_memory="8g",
-        shuffle_partitions=200
-    )
+#     # 1. Crear el loader
+#     loader = SparkDataLoader(
+#         app_name="EsquemaEstrellaLoader",
+#         driver_memory="8g",
+#         shuffle_partitions=200
+#     )
     
-    # 2. Cargar todas las tablas automáticamente
-    dataframes = loader.load_all_tables(
-        base_path=".",
-        filename_prefix="datos_bi_sucio_bebidas"
-    )
+#     # 2. Cargar todas las tablas automáticamente
+#     dataframes = loader.load_all_tables(
+#         base_path=".",
+#         filename_prefix="datos_bi_sucio_bebidas"
+#     )
     
-    # 3. Mostrar resumen
-    loader.show_loaded_tables()
+#     # 3. Mostrar resumen
+#     loader.show_loaded_tables()
     
-    # 4. Acceder a una tabla específica
-    dim_tiempo = loader.get_dataframe('dim_tiempo')
-    if dim_tiempo:
-        print("\nPrimeras 5 filas de dim_tiempo:")
-        dim_tiempo.show(5)
+#     # 4. Acceder a una tabla específica
+#     dim_tiempo = loader.get_dataframe('dim_tiempo')
+#     if dim_tiempo:
+#         print("\nPrimeras 5 filas de dim_tiempo:")
+#         dim_tiempo.show(5)
     
-    # 5. Detener Spark
-    loader.stop()
+#     # 5. Detener Spark
+#     loader.stop()
